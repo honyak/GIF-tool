@@ -60,6 +60,7 @@ $(document).on('click', '.searchImage', function () {
     }
 });
 $('#addSearch').on('click', function () {
+    event.preventDefault;
     var newSearch = $('#search-input').val();
     if (newSearch) {
         console.log(newSearch);
@@ -68,5 +69,5 @@ $('#addSearch').on('click', function () {
         
     }
     $('#search-input').val('').focus();
-    return false;
+    
 });
