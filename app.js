@@ -50,24 +50,22 @@ $(document).on("click", ".searchButton", function () {
 });
 $(document).on('click', '.searchImage', function () {
     var state = $(this).attr('data-state');
-    if (state === 'still'){
+    if (state === 'still') {
         $(this).attr('src', $(this).data('animated'));
         $(this).attr('data-state', 'animated');
     }
-    else{
+    else {
         $(this).attr('src', $(this).data('still'));
         $(this).attr('data-state', 'still');
     }
 });
-$('#addSearch').on('click', function (event) {
-    event.preventDefault();
+$('#addSearch').on('click', function () {
     var newSearch = $('#search-input').val();
     if (newSearch) {
         console.log(newSearch);
         searchArray.push(newSearch);
         populateButtons(searchArray, 'searchButton', '#buttonsArea');
-        
+        $('#search-input').val('').focus();
+        return false;
     }
-    $('#search-input').val('').focus();
-    // return false;
 });
